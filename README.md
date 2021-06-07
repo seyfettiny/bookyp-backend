@@ -28,7 +28,7 @@
 ` pipenv install`
 
 
-**After installation you should create a .env file at root project directory **
+**After installation you should create a .env file at root project directory**
 
 	JWT_SECRET_KEY = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJPbmxpbmUgSldUIEJ1aWxkZXIiLCJpYXQiOjE2MjMwODQwNTYsImV4cCI6MTYyMzA4NDA2NCwiYXVkIjoid3d3LmV4YW1wbGUuY29tIiwic3ViIjoianJvY2tldEBleGFtcG' 
 	MAIL_SERVER = "localhost" 
@@ -37,7 +37,7 @@
 	MAIL_PASSWORD = "123" 
 	PORT = 8000 
 
-**Export .env file as environment variable **
+**Export .env file as environment variable**
 
 	//for linux
 	export ENV_FILE_LOCATION=./.env
@@ -45,11 +45,11 @@
 	//for windows
 	set ENV_FILE_LOCATION=./.env
 
-**Run the app **
+**Run the app**
 
 ` python main.py`
 
-**And you should see something like this **
+**And you should see something like this**
 
 	(bookyp-backend-aCPFcfJr) C:\bookyp-backend>python main.py
 	 * Serving Flask app 'app' (lazy loading)
@@ -64,5 +64,5 @@
 
 
 
-### All contributions are welcomed!
+### All contributions are welcomed :tw-1f340:
 
