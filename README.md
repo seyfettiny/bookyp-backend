@@ -20,12 +20,12 @@
 
 **Activate pipenv shell at root project directory;**
 
-` pipenv shell`
+	pipenv shell
 
 
 **Install requirements defined in Pipfile**
 
-` pipenv install`
+	pipenv install
 
 
 **After installation you should create a .env file at root project directory**
@@ -47,7 +47,7 @@
 
 **Run the app**
 
-` python main.py`
+	python main.py
 
 **And you should see something like this**
 
@@ -59,10 +59,13 @@
 	 * Debug mode: off
 	 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 
+**Run following command on another terminal to run mail server**
 
+	python -m smtpd -n -c DebuggingServer localhost:1025
+	
 ------------
 
 
 
-### All contributions are welcomed :tw-1f340:
+### All contributions are welcomed!
 
