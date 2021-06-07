@@ -12,7 +12,6 @@ app.config.from_envvar('ENV_FILE_LOCATION')
 app.config['BOOKS_FOLDER'] = 'files/'
 mail = Mail(app)
 
-# imports requiring app and mail
 from resources.routes import initialize_routes
 
 api = Api(app, errors=errors)

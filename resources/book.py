@@ -1,17 +1,16 @@
-import os
-from app import app
 from flask import Response, request, send_from_directory
-from database.models import Book, User
+from database.models import Book, User, Review
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from flask_restful import Resource
 from mongoengine.errors import FieldDoesNotExist, NotUniqueError, DoesNotExist, ValidationError, InvalidQueryError
 from resources.errors import SchemaValidationError, BookAlreadyExistsError, InternalServerError, \
     UpdatingBookError, DeletingBookError, BookNotExistsError
-
-
+    
 class BookDownloadApi(Resource):
     def get(self, file):
-        return send_from_directory(app.config['BOOKS_FOLDER'],filename=file, as_attachment=True)
+        from app import app
+        return send_from_directory(app.config['BOOKS_FOLDER'], path=file, as_attachment=True)
+
 
 class BooksApi(Resource):
     def get(self):
@@ -34,7 +33,7 @@ class BooksApi(Resource):
             raise SchemaValidationError
         except NotUniqueError:
             raise BookAlreadyExistsError
-        except Exception as e:
+        except Exception:
             raise InternalServerError
 
 
@@ -65,6 +64,19 @@ class BookApi(Resource):
             raise DeletingBookError
         except Exception:
             raise InternalServerError
+
+    @jwt_required()
+    def post(self):
+        try:
+            body = request.get_json()
+            book = Book(**body)
+            book.save()
+            id = book.id
+            return {'id': str(id)}, 200
+        except FieldDoesNotExist:
+            raise SchemaValidationError
+        except NotUniqueError:
+            raise BookAlreadyExistsError
 
     def get(self, id):
         try:

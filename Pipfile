@@ -10,6 +10,11 @@ flask-restful = "*"
 flask-bcrypt = "*"
 flask-jwt-extended = "*"
 flask-mail = "*"
+mongoengine-goodjson = "*"
+python-dotenv = "*"
+gunicorn = "*"
+gevent = "*"
+python-dateutil = "*"
 
 [dev-packages]
 

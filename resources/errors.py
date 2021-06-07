@@ -16,6 +16,9 @@ class DeletingBookError(Exception):
 class BookNotExistsError(Exception):
     pass
 
+class ReviewNotExistsError(Exception):
+    pass
+
 class EmailAlreadyExistsError(Exception):
     pass
 
@@ -51,6 +54,10 @@ errors = {
      },
      "BookNotExistsError": {
          "message": "Book with given id doesn't exists",
+         "status": 400
+     },
+     "ReviewNotExistsError": {
+         "message": "Review doesn't exists",
          "status": 400
      },
      "EmailAlreadyExistsError": {

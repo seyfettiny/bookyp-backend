@@ -1,3 +1,4 @@
+from resources.errors import InternalServerError
 from threading import Thread
 from flask_mail import Message
 
